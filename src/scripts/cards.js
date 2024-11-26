@@ -3,7 +3,11 @@ let cardContainer = document.querySelector('.cards-container');
 let cardsreservContainer = document.querySelector(".cards-Reserve-player");
 let arrayofplayer = []
 let newdata = []
+let arrayoftop = []
 let arrayofReserve = []
+let arrayofmeduim = []
+let arrayofdown = []
+let arrayoflow = []
 
 async function fetchData()
 {
@@ -18,51 +22,196 @@ async function fetchData()
 
 function addPlayer(i)
 {
-    let found = 0
-    arrayofplayer = JSON.parse(localStorage.getItem("arrayOfPlayers")) || []
+
+    arrayoftop = JSON.parse(localStorage.getItem("arrayoftop")) || []
+    arrayofmeduim = JSON.parse(localStorage.getItem("arrayofmeduim")) || []
+    arrayofdown = JSON.parse(localStorage.getItem("arrayofdown")) || []
+    arrayoflow = JSON.parse(localStorage.getItem("arrayoflow")) || []
     arrayofReserve = JSON.parse(localStorage.getItem('arrayofReserve')) || [];
 
-
-        let dataLength = arrayofplayer.length;
-        for (let j = 0; j < dataLength; j++) {
-            if (arrayofplayer[j].name == newdata.players[i].name) {
-                found = 1;
-                 return
+ 
+    if(newdata.players[i].position == "RW" || newdata.players[i].position == "ST" || newdata.players[i].position == "LW")
+    {
+        let found1 = 0
+        for (let j = 0; j < arrayoftop.length; j++) {
+            if(arrayoftop[j].name == newdata.players[i].name)
+            {
+                found1 = 1;
+                return;
             }
-
         }
-        
-        if(!found)
+        if(!found1)
         {
-            for (let x = 0; x < dataLength; x++) {
-                if(arrayofplayer[x].position == newdata.players[i].position)
+            let found2 = 0
+            arrayofReserve = JSON.parse(localStorage.getItem("arrayofReserve")) || []
+            for (let f = 0; f < arrayoftop.length; f++) {
+                if(arrayoftop[f].position == newdata.players[i].position)
                 {
-                    // arrayofReserve.push(newdata.players[i])
-                    // localStorage.setItem(JSON.stringify("arrayofReserve",arrayofReserve))
-                    let found1 = 0
-                    for (let m = 0; m < arrayofReserve.length; m++) {
-                        if(arrayofReserve[m].name == newdata.players[m].name)
+                    for (let k = 0; k < arrayofReserve.length; k++) {
+                        if(arrayofReserve[k].name == newdata.players[i].name)
                         {
-                            found = 1
-                            return;
+                            found2 = 1;
+                            return
                         }
                     }
-                    if(!found)
+                    if(!found2)
                     {
-                        console.log(newdata.players[i]);
                         arrayofReserve.push(newdata.players[i])
-                        console.log(arrayofReserve);
-                        localStorage.setItem("arrayofReserve",JSON.stringify(arrayofReserve))
+                        localStorage.setItem("arrayofReserve", JSON.stringify(arrayofReserve))
                         return
                     }
 
                 }
             }
-            arrayofplayer.push(newdata.players[i])
-            localStorage.setItem("arrayOfPlayers", JSON.stringify(arrayofplayer))
+
+            arrayoftop.push(newdata.players[i])
+            localStorage.setItem('arrayoftop', JSON.stringify(arrayoftop));
+        }
+    }
+
+    
+
+
+
+    if(newdata.players[i].position == "CM")
+        {
+            let found1 = 0
+            for (let j = 0; j < arrayofmeduim.length; j++) {
+                if(arrayofmeduim[j].name == newdata.players[i].name)
+                {
+                    found1 = 1;
+                    return;
+                }
+            }
+            if(!found1)
+            {
+                let found2 = 0
+                if(arrayofmeduim.length == 3)
+                {
+                    for (let q = 0; q < arrayofReserve.length; q++) {
+                        if(arrayofReserve[q].name == newdata.players[i].name)
+                        {
+                            found2 = 1
+                            return
+                        }
+                    }
+                    if(!found2){
+                    arrayofReserve.push(newdata.players[i])
+                    localStorage.setItem("arrayofReserve", JSON.stringify(arrayofReserve))
+                    return 
+                    }
+                }
+    
+                arrayofmeduim.push(newdata.players[i])
+                localStorage.setItem('arrayofmeduim', JSON.stringify(arrayofmeduim));
+            }
         }
 
 
+
+        
+    if(newdata.players[i].position == "LB" || newdata.players[i].position == "CB" || newdata.players[i].position == "RB")
+        {
+            let found1 = 0
+            for (let j = 0; j < arrayofdown.length; j++) {
+                if(arrayofdown[j].name == newdata.players[i].name)
+                {
+                    found1 = 1;
+                    return;
+                }
+            }
+            if(!found1)
+            {
+                let found2 = 0
+                let lengthCBplayers = 0
+                for (let g = 0; g < arrayofdown.length; g++) {
+                    if(arrayofdown[g].position.includes("CB"))
+                    {
+                        lengthCBplayers++;
+                    }
+                }
+
+                if(lengthCBplayers > 2)
+                {
+                    console.log(lengthCBplayers);
+                    
+                    arrayofReserve.push(newdata.players[i])
+                    localStorage.setItem("arrayofReserve", JSON.stringify(arrayofReserve))
+                    location.reload()
+                    return 
+                }
+                for (let d = 0; d < arrayofdown.length; d++) {
+                    if(arrayofdown[d].position == newdata.players[i].position)
+                    {
+                        let  found3 = 0
+                        for (let k = 0; k < arrayofReserve.length; k++) {
+                            if(arrayofReserve[k].name == newdata.players[i].name)
+                            {
+                                found3 = 1
+                                return
+                            }
+                        }
+                        arrayofReserve.push(newdata.players[i])
+                        localStorage.setItem("arrayofReserve", JSON.stringify(arrayofReserve))
+                        found2 =1
+                        location.reload()
+                        return
+                    }
+                }
+                if(!found2)
+                {
+
+
+                    arrayofdown.push(newdata.players[i])
+                    localStorage.setItem('arrayofdown', JSON.stringify(arrayofdown));
+                    location.reload()
+                    return
+                }
+
+
+    
+                arrayofdown.push(newdata.players[i])
+                localStorage.setItem('arrayofdown', JSON.stringify(arrayofdown));
+                location.reload()
+            }
+        }
+
+
+        if(newdata.players[i].position == "CB")
+        {
+            let found4 = 0
+       
+            for (let z = 0; z < arrayoflow.length; z++) {
+                if(arrayoflow[z].name == newdata.players[i].name)
+                {
+                    found4 = 1
+                    return
+                }
+            }
+            if(!found4)
+            {
+                let found5 = 0
+                for (let d = 0; d < arrayoflow.length; d++) {
+                    if(arrayoflow[d].position == newdata.players[i].position)
+                    {
+                        let  found3 = 0
+                        for (let k = 0; k < arrayofReserve.length; k++) {
+                            if(arrayofReserve[k].name == newdata.players[i].name)
+                            {
+                                found3 = 1
+                                return
+                            }
+                        }
+                        arrayofReserve.push(newdata.players[i])
+                        localStorage.setItem("arrayofReserve", JSON.stringify(arrayofReserve))
+                        location.reload()
+                        return
+                    }
+                }
+            }
+        }
+
+        location.reload()
 }
 
 

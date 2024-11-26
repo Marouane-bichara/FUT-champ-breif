@@ -618,6 +618,10 @@ video {
   max-height: 5em;
 }
 
+.w-\[0\.8em\] {
+  width: 0.8em;
+}
+
 .w-\[1\.2em\] {
   width: 1.2em;
 }
@@ -811,6 +815,14 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.text-\[0\.2em\] {
+  font-size: 0.2em;
+}
+
+.text-\[0\.5em\] {
+  font-size: 0.5em;
 }
 
 .text-\[0\.7em\] {
