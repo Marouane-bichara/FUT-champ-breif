@@ -127,6 +127,9 @@ function addPlayer(i)
             }
             if(!found1)
             {
+
+
+
                 let found2 = 0
                 let lengthCBplayers = 0
                 for (let g = 0; g < arrayofdown.length; g++) {
@@ -136,7 +139,7 @@ function addPlayer(i)
                     }
                 }
 
-                if(lengthCBplayers > 2)
+                if(lengthCBplayers > 2 && newdata.players[i].position == "CB")
                 {
                     
                     arrayOfReserve.push(newdata.players[i])
@@ -144,13 +147,14 @@ function addPlayer(i)
                     location.reload()
                     return 
                 }
-                if(lengthCBplayers < 2)
+                if(lengthCBplayers < 2 && newdata.players[i].position == "CB")
                 {
                     arrayofdown.push(newdata.players[i])
                     localStorage.setItem('arrayofdown', JSON.stringify(arrayofdown));
                     location.reload()
                     return
                 }
+                
                 for (let d = 0; d < arrayofdown.length; d++) {
                     if(arrayofdown[d].position == newdata.players[i].position)
                     {
