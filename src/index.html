@@ -14,10 +14,11 @@
             <input type="text" placeholder="Search for Player" class="inputSearch rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em] px-12 text-white font-[200] text-[0.9em] border-[#999797]"> 
         <button class="border px-1 text-[0.7em] py-1 font-bold rounded-[3px] bg-[#1d2429] hover:scale-[1.1] duration-300 text-white clearbtn">Clear</button>
         </div>
+        
     </div>
-    <div class=" min-w-[200px]  border-r-[1px] w-[700px] md:w-[50%] flex flex-col border-t-[1px] border-[#999797]">
+    <div class=" min-w-[200px]  border-r-[1px] w-[700px] md:w-[50%] flex flex-col border-t-[1px] border-[#999797] ">
         <div class="text-white w-full p-3 max-h-[5em] flex justify-center text-center font-bold text-[1.2em] "><h2>All The Players</h2></div> 
-        <div class="w-full p-2">
+        <div class="w-full p-2 flex">
             <select name="" id="filerOptions" class="text-[0.7em] bg-[#1d2429] text-[#fff4f4ad] ml-9 rounded-[3px] py-1">
                 <option value="Filter">Filter</option>
                 <option value="Filter By Name">Filter By Name</option>
@@ -25,6 +26,7 @@
                 <option value="Filter By Safi">Staff Safi</option>
 
             </select>
+
         </div>
         <div class="cards-container w-full flex flex-wrap justify-center ">
 
@@ -332,8 +334,23 @@
 
 
         </div>
-        <div class=" cardsReserveplayer w-full border">
-            
+        <div class=" cardsReserveplayer w-full flex flex-wrap justify-center">
+            <div class="w-full p-3 text-center flex justify-center items-center">             
+                   <h1 class="text-[1.2em] font-bold">Joueurs de réserve</h1>
+            </div>
+        </div>
+        <div class="w-full border flex-row justify-center items-center">
+            <!-- <div class="w-full p-3">
+                <button class="btnAddPlayer mr-9 border text-[#ffffffc0] rounded-[3px] text-[0.8em] px-2 py-1 hover:text-white duration-300" id="addPlayerBtn">Add Player</button>
+            </div> -->
+           
+                <div class="w-full flex justify-center items-center p-3">
+                    <h2 class="text-[1.2em] font-bold">Add New Player</h2>
+                </div>
+                <div class="w-full border">
+
+                </div>
+                
         </div>
 
     </div>
@@ -342,5 +359,6 @@
 <script src="../src/scripts/cards.js"></script>
 <script src="../src/scripts/afficherCards.js"></script>
 <script src="../src/scripts/afficherReserve.js"></script>
+<script src="../src/scripts/addPlayer.js"></script>
 </body>
 </html>

@@ -60,6 +60,7 @@ function addPlayer(i)
 
                         arrayOfReserve.push(newdata.players[i])
                         localStorage.setItem("arrayOfReserve", JSON.stringify(arrayOfReserve))
+                        location.reload()
                         return
                     }
 
@@ -103,6 +104,8 @@ function addPlayer(i)
                     if(!found2){
                     arrayOfReserve.push(newdata.players[i])
                     localStorage.setItem("arrayOfReserve", JSON.stringify(arrayOfReserve))
+                    location.reload()
+
                     return 
                     }
                 }
@@ -229,6 +232,7 @@ function addPlayer(i)
             {
                 arrayOfReserve.push(newdata.players[i])
                 localStorage.setItem("arrayOfReserve", JSON.stringify(arrayOfReserve))
+                location.reload()
             }
 
 
