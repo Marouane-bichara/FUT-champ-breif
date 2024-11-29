@@ -22,7 +22,7 @@ async function fetchData()
 
 function addPlayer(i)
 {
-
+    
     arrayOfTop = JSON.parse(localStorage.getItem("arrayOfTop")) || []
     arrayofmedium = JSON.parse(localStorage.getItem("arrayofmedium")) || []
     arrayofdown = JSON.parse(localStorage.getItem("arrayofdown")) || []
@@ -278,12 +278,12 @@ function addPlayer(i)
 
 function afficherCards()
 {
-    newdata = JSON.parse(localStorage.getItem("newdata"));
+    
     let dataLength = newdata.players.length
     for (let i = 0; i < dataLength; i++) {
 
 
-    if(data.players[i].position != "GK")
+    if(newdata.players[i].position != "GK")
     {
         cardContainer.innerHTML += `
         <div class="card  max-h-[19em] h-[16em] min-w-[8em] w-[10em] bg-[url('../src/images/badge_gold.webp')] bg-cover bg-center flex flex-col justify-center items-center rounded-[7px]  m-3 cursor-pointer">
@@ -336,4 +336,18 @@ function afficherCards()
  
     }
 }
-fetchData()
+
+
+
+        function loadDataFromLocalStorage() {
+            newdata = JSON.parse(localStorage.getItem("newdata"));
+            if (newdata) {
+                afficherCards();
+            } else {
+                fetchData();
+            }
+        }
+        loadDataFromLocalStorage()
+
+
+

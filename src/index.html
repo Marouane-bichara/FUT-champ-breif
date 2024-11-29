@@ -11,7 +11,7 @@
 <main class="h-[100vh] flex flex-wrap md:flex-row justify-center">
     <div class=" w-full flex justify-center items-center border-t-[1px] border-[#999797] max-h-[5em]">
         <div class=" min-w-[150px] md:w-[30%] flex justify-around p-4">
-            <input type="text" placeholder="Search for Player" class="inputSearch rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em] px-12 text-white font-[200] text-[0.9em] border-[#999797]"> 
+            <input type="text" placeholder="Search for Player" class=" rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em] px-12 text-white font-[200] text-[0.9em] border-[#999797]"> 
         <button class="border px-1 text-[0.7em] py-1 font-bold rounded-[3px] bg-[#1d2429] hover:scale-[1.1] duration-300 text-white clearbtn">Clear</button>
         </div>
         
@@ -20,10 +20,15 @@
         <div class="text-white w-full p-3 max-h-[5em] flex justify-center text-center font-bold text-[1.2em] "><h2>All The Players</h2></div> 
         <div class="w-full p-2 flex">
             <select name="" id="filerOptions" class="text-[0.7em] bg-[#1d2429] text-[#fff4f4ad] ml-9 rounded-[3px] py-1">
-                <option value="Filter">Filter</option>
-                <option value="Filter By Name">Filter By Name</option>
-                <option value="Filter By Youssofia">Staff Youssofia</option>
-                <option value="Filter By Safi">Staff Safi</option>
+                <option value="">Select Position</option>
+                <option value="">LW</option>
+                <option value="">ST</option>
+                <option value="">RW</option>
+                <option value="">CM</option>
+                <option value="">LB</option>
+                <option value="">CB</option>
+                <option value="">RB</option>
+                <option value="">GK </option>
 
             </select>
 
@@ -339,26 +344,143 @@
                    <h1 class="text-[1.2em] font-bold">Joueurs de réserve</h1>
             </div>
         </div>
-        <div class="w-full border flex-row justify-center items-center">
-            <!-- <div class="w-full p-3">
-                <button class="btnAddPlayer mr-9 border text-[#ffffffc0] rounded-[3px] text-[0.8em] px-2 py-1 hover:text-white duration-300" id="addPlayerBtn">Add Player</button>
-            </div> -->
-           
-                <div class="w-full flex justify-center items-center p-3">
-                    <h2 class="text-[1.2em] font-bold">Add New Player</h2>
-                </div>
-                <div class="w-full border">
 
+
+        <div class="w-full border-t flex justify-center items-center ">
+
+           <div class="w-[22em] border my-3 rounded-[3px] border-[gold]">
+            <div class="w-full flex-row justify-center items-center">
+                <div class="w-full flex justify-center p-3 text-[1.1em] font-bold"><h2>Inscription Joueur</h2></div>
+
+                <div>
+                    <select name="" id="" class="text-[0.7em] bg-[#1d2429] text-[#fff4f4ad] ml-9 rounded-[3px] py-1 px-2">
+                        <option value="">Select</option>
+                        <option value="">Joueur de Champ</option>
+                        <option value="">Gardien</option>
+                    </select>
                 </div>
+
+                <div class="w-full">
+         
+                    <div class="w-full flex justify-center items-center p-3 flex-wrap">
+                        <div >
+                            <div class="flex justify-center text-[#fff4f4ad]">                  
+                                <p>Nom Complet</p>
+                         </div> 
+                            <input type="text" class="allinputs m-1  rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]" id="fullNameInput">
+                        </div>
+                        <div>  
+                            <div class="flex justify-center text-[#fff4f4ad]">                  
+                                <p>URL de la Photo</p>
+                         </div>            
+                             <input type="text" placeholder="URL de la Photo" class="allinputs m-1  rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                        </div>
+                    </div>          
+                </div>
+
+                <div>
+                    <div class="w-full flex justify-center items-center  p-3 flex-wrap">
+                        <div >
+                            <div class="flex justify-center text-[#fff4f4ad]">                  
+                                <p>Nationalite</p>
+                         </div> 
+                            <input type="text" class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]" id="nationaliteInput">
+                        </div>
+                        <div >  
+                            <div class="flex justify-center text-[#fff4f4ad]">                  
+                                <p>URL de Drapeau</p>
+                         </div>            
+                             <input type="text"placeholder="URL de Drapeau" class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                        </div>
+                    </div>          
+                </div>
+
+                <div>
+                    <div class="w-full flex justify-center items-center p-3 flex-wrap">
+                        <div >
+                            <div class="flex justify-center text-[#fff4f4ad]">                  
+                                <p>Club</p>
+                         </div> 
+                            <input type="text" class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                        </div>
+                        <div >  
+                            <div class="flex justify-center text-[#fff4f4ad]">                  
+                                <p>URL de Logo du Club</p>
+                         </div>            
+                             <input type="text" placeholder="URL de Logo du Club" class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                        </div>
+                    </div>            
+                </div>
+
+                <div>
+                    <div class="w-full flex justify-center text-[#fff4f4ad] p-2"><p>Position</p></div>
+                    <div class="w-full flex justify-center">
+                        <select name="" id="selectPosition" class="text-[0.7em] bg-[#1d2429] text-[#fff4f4ad]  rounded-[3px] py-1 px-10">
+                            <option value="">Select Position</option>
+                            <option value="LW">LW</option>
+                            <option value="ST">ST</option>
+                            <option value="RW">RW</option>
+                            <option value="CM">CM</option>
+                            <option value="LB">LB</option>
+                            <option value="CB">CB</option>
+                            <option value="RB">RB</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="w-full flex justify-center p-3 text-[#fff4f4ad]"><p>Note Globale (10-99)</p></div>
+                    <div class="w-full flex justify-center">
+                        <input type="text" id="noteGlobale" class="m-1 allinputs  rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                </div>
+                <div class="w-full flex justify-center p-4 text-[#fff4f4ad]"><h3>Statistique - Joueur de Champ</h3></div>
+
+                <div class="flex justify-around flex-wrap">
+                    <div class="w-[10em] ">
+                        <div class="w-full flex justify-center"><p>Pace</p></div>
+                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                    <div class="w-[10em] ">
+                        <div class="w-full flex justify-center"><p>Shooting</p></div>
+                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                    <div class="w-[10em] ">
+                        <div class="w-full flex justify-center"><p>Passing</p></div>
+                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                </div>
+
+                <div class="flex justify-around flex-wrap py-4">
+                    <div class="w-[10em] ">
+                        <div class="w-full flex justify-center"><p>Dribbling</p></div>
+                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                    <div class="w-[10em] ">
+                        <div class="w-full flex justify-center"><p>Defending</p></div>
+                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                    <div class="w-[10em] ">
+                        <div class="w-full flex justify-center"><p>Physical</p></div>
+                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                </div>
+
+
+                <div class="btnAddPlayer w-full flex justify-center py-3 "><button class="bg-[#3343d1] px-8 text-[0.8em] rounded-[3px]">Add Player</button></div>
+                <div class="errorMessage w-full flex justify-center"></div>
+
+            </div>
+           </div>
+
                 
         </div>
 
     </div>
 </main>
-
+<script src="../src/scripts/addPlayer.js"></script>
 <script src="../src/scripts/cards.js"></script>
 <script src="../src/scripts/afficherCards.js"></script>
 <script src="../src/scripts/afficherReserve.js"></script>
-<script src="../src/scripts/addPlayer.js"></script>
 </body>
 </html>
