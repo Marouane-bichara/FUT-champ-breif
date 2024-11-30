@@ -8,6 +8,10 @@ let arrayOfReserve = []
 let arrayofmedium = []
 let arrayofdown = []
 let arrayoflow = []
+let allinputss = document.querySelectorAll(".allinputs")
+let selectPositionnne = document.getElementById("selectPosition");
+
+
 
 async function fetchData()
 {
@@ -15,8 +19,11 @@ async function fetchData()
     data = await respo.json()
      newdata = data
      localStorage.setItem("newdata" , JSON.stringify(newdata));
-    afficherCards()
+    afficherCards()   
+    
 }
+
+
 
 
 
@@ -249,6 +256,86 @@ function addPlayer(i)
 
 
 
+function editplayer(i)
+{
+    let dataoflocalstorage = JSON.parse(localStorage.getItem("newdata"));
+    console.log(dataoflocalstorage.players[i]);
+
+
+
+
+
+
+
+
+
+
+    if(dataoflocalstorage.players[i].position != "GK"){
+
+    arrayOfInputs[0].value = dataoflocalstorage.players[i].name
+    arrayOfInputs[1].value = dataoflocalstorage.players[i].photo
+    arrayOfInputs[2].value = dataoflocalstorage.players[i].nationality
+    arrayOfInputs[3].value = dataoflocalstorage.players[i].flag
+    arrayOfInputs[4].value = dataoflocalstorage.players[i].club
+    arrayOfInputs[5].value = dataoflocalstorage.players[i].logo
+    arrayOfInputs[6].value = dataoflocalstorage.players[i].rating
+    arrayOfInputs[7].value = dataoflocalstorage.players[i].pace
+    arrayOfInputs[8].value = dataoflocalstorage.players[i].shooting
+    arrayOfInputs[9].value = dataoflocalstorage.players[i].passing
+    arrayOfInputs[10].value = dataoflocalstorage.players[i].dribbling
+    arrayOfInputs[11].value = dataoflocalstorage.players[i].defending
+    arrayOfInputs[12].value = dataoflocalstorage.players[i].physical
+    selectPosition.value = dataoflocalstorage.players[i].position
+
+    divingGk.innerHTML = "Pace"
+    handlingGk.innerHTML = "Shooting"
+    kickingGk.innerHTML = "Passing"
+    reflexesGk.innerHTML = "Dribbling"
+    speedGk.innerHTML = "Defending"
+    positioningGk.innerHTML = "Physical"
+        
+    dataoflocalstorage.players.splice(i, 1); 
+    localStorage.setItem("newdata", JSON.stringify(dataoflocalstorage)); 
+
+    
+}
+    else if(dataoflocalstorage.players[i].position == "GK")
+    {
+        arrayOfInputs[0].value = dataoflocalstorage.players[i].name
+        arrayOfInputs[1].value = dataoflocalstorage.players[i].photo
+        arrayOfInputs[2].value = dataoflocalstorage.players[i].nationality
+        arrayOfInputs[3].value = dataoflocalstorage.players[i].flag
+        arrayOfInputs[4].value = dataoflocalstorage.players[i].club
+        arrayOfInputs[5].value = dataoflocalstorage.players[i].logo
+        arrayOfInputs[6].value = dataoflocalstorage.players[i].rating
+        arrayOfInputs[7].value = dataoflocalstorage.players[i].diving
+        arrayOfInputs[8].value = dataoflocalstorage.players[i].handling
+        arrayOfInputs[9].value = dataoflocalstorage.players[i].kicking
+        arrayOfInputs[10].value = dataoflocalstorage.players[i].reflexes
+        arrayOfInputs[11].value = dataoflocalstorage.players[i].speed
+        arrayOfInputs[12].value = dataoflocalstorage.players[i].positioning
+        selectPosition.value = dataoflocalstorage.players[i].position
+
+
+
+        divingGk.innerHTML = "Diving"
+        handlingGk.innerHTML = "Handling"
+        kickingGk.innerHTML = "Kicking"
+        reflexesGk.innerHTML = "Reflexes"
+        speedGk.innerHTML = "Speed"
+        positioningGk.innerHTML = "Positioning"
+
+
+        dataoflocalstorage.players.splice(i, 1); 
+        console.log(dataoflocalstorage);
+        
+        localStorage.setItem("newdata", JSON.stringify(dataoflocalstorage)); 
+
+
+    }
+
+}
+
 
 
 
@@ -304,7 +391,10 @@ function afficherCards()
         <img src="${newdata.players[i].flag}" alt="" class="w-[1.2em]">
         <img src="${newdata.players[i].logo}" alt="" class="w-[1em]">
     </div>
-        <div class='bx bx-add-to-queue text-black p-1' onclick="addPlayer(${i})"></div>
+        <div>       
+         <div class='bx bx-add-to-queue text-black p-1' onclick="addPlayer(${i})"></div>
+        <div class="bx bxs-edit-alt" onclick="editplayer(${i})"></div>
+        </div>
 
 </div>
 `
@@ -329,7 +419,10 @@ function afficherCards()
         <img src="${newdata.players[i].flag}" alt="" class="w-[1.2em]">
         <img src="${newdata.players[i].logo}" alt="" class="w-[1em]">
     </div>
-    <div class='bx bx-add-to-queue text-black p-1' onclick="addPlayer(${i})"></div>
+            <div>       
+         <div class='bx bx-add-to-queue text-black p-1' onclick="addPlayer(${i})"></div>
+        <div class="bx bxs-edit-alt" onclick="editplayer(${i})"></div>
+        </div>
 </div>
 `
     }

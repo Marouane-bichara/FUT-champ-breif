@@ -346,19 +346,12 @@
         </div>
 
 
-        <div class="w-full border-t flex justify-center items-center ">
+        <div class="containerForm w-full border-t flex justify-center items-center ">
 
            <div class="w-[22em] border my-3 rounded-[3px] border-[gold]">
             <div class="w-full flex-row justify-center items-center">
                 <div class="w-full flex justify-center p-3 text-[1.1em] font-bold"><h2>Inscription Joueur</h2></div>
 
-                <div>
-                    <select name="" id="" class="text-[0.7em] bg-[#1d2429] text-[#fff4f4ad] ml-9 rounded-[3px] py-1 px-2">
-                        <option value="">Select</option>
-                        <option value="">Joueur de Champ</option>
-                        <option value="">Gardien</option>
-                    </select>
-                </div>
 
                 <div class="w-full">
          
@@ -424,6 +417,7 @@
                             <option value="LB">LB</option>
                             <option value="CB">CB</option>
                             <option value="RB">RB</option>
+                            <option value="GK">GK</option>
                         </select>
                     </div>
                 </div>
@@ -438,37 +432,37 @@
 
                 <div class="flex justify-around flex-wrap">
                     <div class="w-[10em] ">
-                        <div class="w-full flex justify-center"><p>Pace</p></div>
+                        <div class="w-full flex justify-center divingGk"><p>Pace</p></div>
                         <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
                     </div>
                     <div class="w-[10em] ">
-                        <div class="w-full flex justify-center"><p>Shooting</p></div>
+                        <div class="w-full flex justify-center handlingGk"><p>Shooting</p></div>
                         <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
                     </div>
                     <div class="w-[10em] ">
-                        <div class="w-full flex justify-center"><p>Passing</p></div>
+                        <div class="w-full flex justify-center kickingGk"><p>Passing</p></div>
                         <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
                     </div>
                 </div>
 
                 <div class="flex justify-around flex-wrap py-4">
                     <div class="w-[10em] ">
-                        <div class="w-full flex justify-center"><p>Dribbling</p></div>
+                        <div class="w-full flex justify-center reflexesGk"><p>Dribbling</p></div>
+                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                    </div>
+                    <div class="w-[10em] "> 
+                        <div class="w-full flex justify-center speedGk"><p>Defending</p></div>
                         <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
                     </div>
                     <div class="w-[10em] ">
-                        <div class="w-full flex justify-center"><p>Defending</p></div>
-                        <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
-                    </div>
-                    <div class="w-[10em] ">
-                        <div class="w-full flex justify-center"><p>Physical</p></div>
+                        <div class="w-full flex justify-center positioningGk"><p>Physical</p></div>
                         <input type="text"  class="m-1 allinputs rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
                     </div>
                 </div>
 
 
                 <div class="btnAddPlayer w-full flex justify-center py-3 "><button class="bg-[#3343d1] px-8 text-[0.8em] rounded-[3px]">Add Player</button></div>
-                <div class="errorMessage w-full flex justify-center"></div>
+                <div class="errorMessage w-full flex justify-center text-[red]"></div>
 
             </div>
            </div>
@@ -482,5 +476,6 @@
 <script src="../src/scripts/cards.js"></script>
 <script src="../src/scripts/afficherCards.js"></script>
 <script src="../src/scripts/afficherReserve.js"></script>
+<script src="../src/scripts/SwitchPlayer.js"></script>
 </body>
 </html>
