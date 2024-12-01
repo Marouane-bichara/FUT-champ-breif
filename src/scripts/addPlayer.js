@@ -6,26 +6,28 @@ let selectPosition = document.getElementById("selectPosition")
 let errorMessage = document.querySelector(".errorMessage");
 let noteGlobale = document.getElementById("noteGlobale");
 let selectGardienOrJoueurr = document.getElementById("selectGardienOrJoueur")
+let urlphoto = document.querySelector(".urlphoto");
 
 let arrayOfInputs = Array.from(allinputs)
 
 
-function validationDeForm()
-{   
 
-
-
-}
 
 
 function addNewPlayer()
 {
     btnAddPlayer.addEventListener('click' , ()=>
         {
-            if(fullNameInput.value.length > 16 || nationaliteInput.value.length > 16)
+            if(!(urlphoto.value.startsWith("http://") || urlphoto.value.startsWith("https://")))
+            {
+                errorMessage.textContent = "Input URL not valid";
+                return;
+            }
+
+            if(fullNameInput.value.length > 20 || nationaliteInput.value.length > 20)
                 {
                     errorMessage.value = ''
-                    errorMessage.textContent = `Inputs must be between 0 and 15`
+                    errorMessage.textContent = `Inputs must be between 0 and 20`
                     return
                 }
                 for (let l = 0; l < arrayOfInputs.length; l++) {

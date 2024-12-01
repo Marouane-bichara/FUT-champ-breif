@@ -18,22 +18,8 @@
     </div>
     <div class=" min-w-[200px]  border-r-[1px] w-[700px] md:w-[50%] flex flex-col border-t-[1px] border-[#999797] ">
         <div class="text-white w-full p-3 max-h-[5em] flex justify-center text-center font-bold text-[1.2em] "><h2>All The Players</h2></div> 
-        <div class="w-full p-2 flex">
-            <select name="" id="filerOptions" class="text-[0.7em] bg-[#1d2429] text-[#fff4f4ad] ml-9 rounded-[3px] py-1">
-                <option value="">Select Position</option>
-                <option value="">LW</option>
-                <option value="">ST</option>
-                <option value="">RW</option>
-                <option value="">CM</option>
-                <option value="">LB</option>
-                <option value="">CB</option>
-                <option value="">RB</option>
-                <option value="">GK </option>
 
-            </select>
-
-        </div>
-        <div class="cards-container w-full flex flex-wrap justify-center ">
+        <div class="cards-container w-full flex flex-wrap justify-center max-h-[500px] overflow-y-auto ">
 
         </div>
     </div>
@@ -366,7 +352,7 @@
                             <div class="flex justify-center text-[#fff4f4ad]">                  
                                 <p>URL de la Photo</p>
                          </div>            
-                             <input type="text" placeholder="URL de la Photo" class="allinputs m-1  rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
+                             <input type="text" placeholder="URL de la Photo" class="allinputs urlphoto m-1  rounded-[3px] bg-[#1d2429] border-[0.5px] placeholder:text-[0.7em]  text-white font-[200] text-[0.9em] border-[#999797]">
                         </div>
                     </div>          
                 </div>
@@ -477,5 +463,6 @@
 <script src="../src/scripts/afficherCards.js"></script>
 <script src="../src/scripts/afficherReserve.js"></script>
 <script src="../src/scripts/SwitchPlayer.js"></script>
+<script src="../src/scripts/deleteCards.js"></script>
 </body>
 </html>

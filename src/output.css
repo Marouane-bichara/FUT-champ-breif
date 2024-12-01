@@ -631,6 +631,10 @@ video {
   max-height: 5em;
 }
 
+.max-h-\[500px\] {
+  max-height: 500px;
+}
+
 .w-\[0\.6em\] {
   width: 0.6em;
 }
@@ -735,6 +739,10 @@ video {
   justify-content: space-around;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .rounded-\[3em\] {
   border-radius: 3em;
 }
@@ -749,6 +757,10 @@ video {
 
 .rounded-\[7px\] {
   border-radius: 7px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border {

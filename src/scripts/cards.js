@@ -291,7 +291,7 @@ function editplayer(i)
     handlingGk.innerHTML = "Shooting"
     kickingGk.innerHTML = "Passing"
     reflexesGk.innerHTML = "Dribbling"
-    speedGk.innerHTML = "Defending"
+    speedGk.innerHTML = "Defending" 
     positioningGk.innerHTML = "Physical"
         
     dataoflocalstorage.players.splice(i, 1); 
@@ -394,6 +394,7 @@ function afficherCards()
         <div>       
          <div class='bx bx-add-to-queue text-black p-1' onclick="addPlayer(${i})"></div>
         <div class="bx bxs-edit-alt" onclick="editplayer(${i})"></div>
+                <div class='bx bxs-message-alt-minus' onclick="deletPlayers(${i})"></div>
         </div>
 
 </div>
@@ -422,6 +423,7 @@ function afficherCards()
             <div>       
          <div class='bx bx-add-to-queue text-black p-1' onclick="addPlayer(${i})"></div>
         <div class="bx bxs-edit-alt" onclick="editplayer(${i})"></div>
+        <div class='bx bxs-message-alt-minus' onclick="deletPlayers(${i})"></div>
         </div>
 </div>
 `
