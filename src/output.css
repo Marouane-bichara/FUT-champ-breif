@@ -579,10 +579,6 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.ml-9 {
-  margin-left: 2.25rem;
-}
-
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -631,8 +627,8 @@ video {
   max-height: 5em;
 }
 
-.max-h-\[500px\] {
-  max-height: 500px;
+.max-h-\[600px\] {
+  max-height: 600px;
 }
 
 .w-\[0\.6em\] {
@@ -759,10 +755,6 @@ video {
   border-radius: 7px;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
 .border {
   border-width: 1px;
 }
@@ -808,12 +800,97 @@ video {
   background-color: rgb(51 67 209 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[ur\] {
+  background-color: ur;
+}
+
+.bg-\[url\] {
+  background-color: url;
+}
+
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[black\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[url\(\'\.\.\/src\/images\/badge_gold\.webp\'\)\] {
   background-image: url('../src/images/badge_gold.webp');
 }
 
 .bg-\[url\(\'\.\.\/src\/images\/stadium_background\.webp\'\)\] {
   background-image: url('../src/images/stadium_background.webp');
+}
+
+.bg-\[url\(\)\] {
+  background-image: url();
+}
+
+.bg-\[url\(\:\)\] {
+  background-image: url(:);
+}
+
+.bg-\[url\(\|\)\] {
+  background-image: url(|);
+}
+
+.bg-\[url\(\"\"\)\] {
+  background-image: url("");
+}
+
+.bg-\[url\(\'\'\)\] {
+  background-image: url('');
+}
+
+.bg-\[url\(\'\.\.\/\'\)\] {
+  background-image: url('../');
+}
+
+.bg-\[url\(\'\.\.\/src\'\)\] {
+  background-image: url('../src');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\'\)\] {
+  background-image: url('../src/images');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/\'\)\] {
+  background-image: url('../src/images/');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/138\'\)\] {
+  background-image: url('../src/images/138');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/1387\'\)\] {
+  background-image: url('../src/images/1387');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/138798\'\)\] {
+  background-image: url('../src/images/138798');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/1387989\.\'\)\] {
+  background-image: url('../src/images/1387989.');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/1387989\.jp\'\)\] {
+  background-image: url('../src/images/1387989.jp');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/1387989\.jpg\'\)\] {
+  background-image: url('../src/images/1387989.jpg');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/scorebord\.png\'\)\] {
+  background-image: url('../src/images/scorebord.png');
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/footballback\.jpg\'\)\] {
+  background-image: url('../src/images/footballback.jpg');
 }
 
 .bg-cover {
@@ -840,19 +917,9 @@ video {
   padding: 1rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .px-8 {
@@ -967,8 +1034,8 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.duration-300 {
-  transition-duration: 300ms;
+.text-\[\] {
+  color: ;
 }
 
 .placeholder\:text-\[0\.7em\]::-moz-placeholder {
@@ -977,12 +1044,6 @@ video {
 
 .placeholder\:text-\[0\.7em\]::placeholder {
   font-size: 0.7em;
-}
-
-.hover\:scale-\[1\.1\]:hover {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @media (min-width: 768px) {
